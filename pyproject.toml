@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scantext"
+version = "1.0.0"
+description = "CLI that OCRs photos and scans of your own documents with Tesseract."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sheshraj Pawar" }]
+dependencies = [
+  "opencv-python-headless>=4.8",
+  "numpy>=1.24",
+  "Pillow>=10.0",
+  "pytesseract>=0.3.10",
+]
+
+[project.scripts]
+scantext = "scantext.cli:run"
+
+[tool.setuptools.packages.find]
+include = ["scantext*"]
